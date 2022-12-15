@@ -1,9 +1,9 @@
 /**
- * Videos Database can be added here.
- * You can add videos of your wish with different attributes
+ * Quiz Database can be added here.
+ * You can add quizzes of your wish with different attributes
  * */
 
-export const videos = [
+export const quiz = [
   {
     _id: "Wo5dMEP_BbI",
     title: "Awesome Video about Coding",
