@@ -7,13 +7,14 @@ import {
   getAllQuizHandler,
   getQuizHandler,
 } from "./backend/controllers/QuizController";
-import { quiz } from "./backend/db/quiz";
+import { quizes } from "./backend/db/quizes";
 import { categories } from "./backend/db/categories";
 import {
   getAllCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
 import { users } from "./backend/db/users";
+
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
     serializers: {
@@ -30,7 +31,7 @@ export function makeServer({ environment = "development" } = {}) {
     // Runs on the start of the server
     seeds(server) {
       server.logging = false;
-      quiz.forEach((item) => {
+      quizes.forEach((item) => {
         server.create("quiz", { ...item });
       });
       categories.forEach((item) => server.create("category", { ...item }));
@@ -47,7 +48,7 @@ export function makeServer({ environment = "development" } = {}) {
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));
 
-      // video routes (public)
+      // quiz routes (public)
       this.get("/quiz", getAllQuizHandler.bind(this));
       this.get("/quiz/:quizId", getQuizHandler.bind(this));
 

@@ -1,0 +1,7 @@
+.card__header {
+  position: relative;
+}
+
+.card__title {
+  position: absolute;
+}

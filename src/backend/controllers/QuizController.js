@@ -12,7 +12,7 @@ import { Response } from "miragejs";
 
 export const getAllQuizHandler = function () {
   try {
-    return new Response(200, {}, { videos: this.db.quiz });
+    return new Response(200, {}, { quiz: this.db.quizzes });
   } catch (error) {
     return new Response(
       500,
@@ -39,8 +39,8 @@ export const getAllQuizHandler = function () {
 export const getQuizHandler = function (schema, request) {
   const { quizId } = request.params;
   try {
-    const quiz = schema.videos.findBy({ _id: quizId }).attrs;
-    return new Response(200, {}, { quiz });
+    const quizResult = schema.quizzes.findBy({ id: quizId }).attrs;
+    return new Response(200, {}, { quizResult });
   } catch (error) {
     return new Response(
       500,
