@@ -6,7 +6,7 @@ const QuizContext = createContext<any>(initialState);
 
 const useQuiz = () => useContext(QuizContext);
 
-const QuizProvider = ({ children }: any) => {
+const QuizProvider = ({ children }: any): JSX.Element => {
   const [state, dispatch] = useReducer(quizReducer, initialState);
   return (
     <QuizContext.Provider value={{ state, dispatch }}>

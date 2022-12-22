@@ -2,7 +2,7 @@ import "./landing-page.css";
 import { Link } from "react-router-dom";
 import { landingImg } from "../../assets";
 
-const LandingPage = () => {
+const LandingPage = (): JSX.Element => {
   return (
     <div className="landingpage flex-row">
       <div className="landingpage__details padding-sm">

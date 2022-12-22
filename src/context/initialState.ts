@@ -1,9 +1,11 @@
 import { initialStateType } from "./quizContext.type";
 
 export const initialState: initialStateType = {
-  QuizData: [],
+  quizData: [],
   quizLoading: false,
   quizError: "",
   currentQuiz: [],
   latestScore: 0,
+  filter: "All",
+  currentQuizId: "",
 };

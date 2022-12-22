@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import "./App.css";
-import { useQuiz } from "./context/quizContext";
+import { useQuiz } from "./context";
 import {
   FETCH_DATA,
   FETCH_DATA_ERROR,
@@ -9,14 +9,13 @@ import {
 } from "./utils/constants";
 import { Router } from "./router/Router";
 
-function App() {
+function App(): JSX.Element {
   const { dispatch } = useQuiz();
   useEffect(() => {
     const getData = async () => {
       dispatch({ type: FETCH_DATA });
       try {
-        const response = await axios.get("/api/qui");
-        console.log(response.data.quiz);
+        const response = await axios.get("/api/quiz");
         dispatch({ type: FETCH_DATA_SUCCESS, payload: response?.data?.quiz });
       } catch (error: any) {
         dispatch({

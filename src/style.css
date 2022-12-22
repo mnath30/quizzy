@@ -6,6 +6,7 @@
   --btn-color: #bb86fc;
   --secondary-text-color: #dadada;
   --text-color: #ece6db;
+  --shadow-color: #2c2c2c;
 }
 
 /* flex */
@@ -53,4 +54,13 @@ a {
 /* Dark Mode */
 .dark {
   background-color: var(--background-color);
+}
+
+/* Standard button */
+.btn {
+  background-color: var(--btn-color);
+  border-radius: 0.4rem;
+  color: var(--primary-color);
+  padding: 0.8rem 0.6rem;
+  cursor: pointer;
 }

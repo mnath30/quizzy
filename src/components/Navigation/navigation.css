@@ -1,0 +1,9 @@
+.navigation {
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.navigation__img {
+  padding: 0.8rem 0.2rem 0.8rem 0.8rem;
+  width: 4rem;
+}
