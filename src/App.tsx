@@ -7,7 +7,6 @@ import {
   FETCH_DATA_ERROR,
   FETCH_DATA_SUCCESS,
 } from "./utils/constants";
-import { LandingPage } from "./pages";
 import { Router } from "./router/Router";
 
 function App() {
@@ -31,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App dark">
       <Router />
     </div>
   );
