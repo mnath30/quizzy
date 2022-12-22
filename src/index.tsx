@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { makeServer } from "./server";
-import { QuizProvider } from "./context/quizContext";
+import { QuizProvider } from "./context";
 
 // Call make Server
 makeServer();

@@ -1,0 +1,33 @@
+.rules {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.rules__container {
+  background-color: var(--primary-color);
+  margin-top: 4rem;
+  width: 70%;
+  border-radius: 5px;
+  text-align: left;
+  padding: 0.4rem;
+}
+
+/* Heading */
+.rules__container--header {
+  padding: 0.6rem 1.2rem;
+  margin: 0.2rem 0.4rem;
+}
+
+/* List */
+.rules__container--list {
+  padding: 0.4rem 0.2rem;
+}
+
+/* Button */
+.rules__container--btn {
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  float: right;
+  margin-right: 2rem;
+}

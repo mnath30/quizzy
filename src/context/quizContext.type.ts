@@ -1,11 +1,11 @@
 import React from "react";
 
-type Option = {
+export type Option = {
   value: any;
   isCorrect: true | false;
 };
 
-type Question = {
+export type Question = {
   question: any;
   options: Option[];
 };
@@ -21,11 +21,13 @@ export type QuizType = {
 };
 
 export type initialStateType = {
-  QuizData: QuizType[];
+  quizData: QuizType[];
   quizLoading: true | false;
   quizError?: string;
   currentQuiz: any;
   latestScore: number;
+  filter: string;
+  currentQuizId: string;
 };
 
 export type QuizContextType = {

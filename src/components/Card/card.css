@@ -1,7 +1,56 @@
-.card__header {
-  position: relative;
+.card__container {
+  width: 16rem;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 22rem;
+  margin-bottom: 0;
 }
 
-.card__title {
+.card__container:hover {
+  box-shadow: 10px 5px 15px var(--shadow-color);
+}
+
+/* Card Image */
+.card__header {
+  position: relative;
+  height: 60%;
+}
+
+.card__header--img {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  object-fit: fill;
+}
+
+.card__header--title {
   position: absolute;
+  bottom: 0.4rem;
+  left: 0.4rem;
+  font-size: 1.2rem;
+  color: var(--btn-color);
+  padding: 0.4rem 0.8rem;
+  background: rgba(5, 5, 5, 0.8);
+  border-radius: 5px;
+}
+
+/* Card Description */
+.card__body {
+  text-align: left;
+}
+
+.card__body--header {
+  padding: 0.4rem 0.2rem;
+  margin: 0.4rem;
+}
+
+.card__body--details {
+  margin: 0.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__body--questions {
+  margin: 0.4rem;
 }

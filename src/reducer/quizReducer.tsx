@@ -3,6 +3,8 @@ import {
   FETCH_DATA,
   FETCH_DATA_ERROR,
   FETCH_DATA_SUCCESS,
+  FILTER_CATEGORY,
+  SET_CURRENT_QUIZ_ID,
 } from "../utils/constants";
 
 const quizReducer = (state: initialStateType, action: any) => {
@@ -14,10 +16,14 @@ const quizReducer = (state: initialStateType, action: any) => {
         ...state,
         quizLoading: false,
         quizError: "",
-        QuizData: action.payload,
+        quizData: action.payload,
       };
     case FETCH_DATA_ERROR:
       return { ...state, quizLoading: false, quizError: action.payload };
+    case FILTER_CATEGORY:
+      return { ...state, filter: action.payload };
+    case SET_CURRENT_QUIZ_ID:
+      return { ...state, currentQuizId: action.payload };
     default:
       return state;
   }
