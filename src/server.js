@@ -2,18 +2,18 @@ import { Server, Model, RestSerializer } from "miragejs";
 import {
   loginHandler,
   signupHandler,
-} from "./backend/controllers/AuthController";
+} from "./backend/controllers/AuthController.js";
 import {
   getAllQuizHandler,
   getQuizHandler,
-} from "./backend/controllers/QuizController";
-import { quizes } from "./backend/db/quizes";
-import { categories } from "./backend/db/categories";
+} from "./backend/controllers/QuizController.js";
+import { quizes } from "./backend/db/quizes.js";
+import { categories } from "./backend/db/categories.js";
 import {
   getAllCategoriesHandler,
   getCategoryHandler,
-} from "./backend/controllers/CategoryController";
-import { users } from "./backend/db/users";
+} from "./backend/controllers/CategoryController.js";
+import { users } from "./backend/db/users.js";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({

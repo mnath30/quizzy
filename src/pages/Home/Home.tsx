@@ -4,6 +4,7 @@ import { QuizType } from "../../context";
 import { FILTER_CATEGORY, SET_CURRENT_QUIZ_ID } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
+import { getFilteredData } from "../../utils/getFilteredData";
 
 const Home = (): JSX.Element => {
   const {
@@ -18,10 +19,7 @@ const Home = (): JSX.Element => {
   };
 
   // Filtering the data as per the filter set
-  const filteredData =
-    filter === "All"
-      ? quizData
-      : quizData.filter((quizItem: QuizType) => quizItem.category === filter);
+  const filteredData = getFilteredData(filter, quizData);
 
   // Selecting quiz
   const selectQuiz = (quizId: string) => {
