@@ -1,9 +1,10 @@
 import "./navigation.css";
+import { logo } from "../../assets";
 
 const Navigation = (): JSX.Element => {
   return (
     <nav className="navigation flex-row">
-      <img src="./favicon.ico" alt="logo" className="navigation__img" />
+      <img src={logo} alt="logo" className="navigation__img" />
       <h2>Quizzy</h2>
     </nav>
   );

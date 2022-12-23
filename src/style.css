@@ -51,6 +51,11 @@ a {
   text-decoration: none;
 }
 
+/* list */
+li {
+  list-style: none;
+}
+
 /* Dark Mode */
 .dark {
   background-color: var(--background-color);
@@ -63,4 +68,5 @@ a {
   color: var(--primary-color);
   padding: 0.8rem 0.6rem;
   cursor: pointer;
+  border: none;
 }
