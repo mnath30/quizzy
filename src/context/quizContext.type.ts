@@ -24,10 +24,14 @@ export type initialStateType = {
   quizData: QuizType[];
   quizLoading: true | false;
   quizError?: string;
-  currentQuiz: any;
   latestScore: number;
   filter: string;
   currentQuizId: string;
+  currentQuiz: any;
+  onGoingQuizDetails: {
+    currentQNo: number;
+    optionsSelected: string[];
+  };
 };
 
 export type QuizContextType = {

@@ -1,3 +1,4 @@
+/* category card */
 .card__container {
   width: 16rem;
   background-color: var(--primary-color);
@@ -53,4 +54,55 @@
 
 .card__body--questions {
   margin: 0.4rem;
+}
+
+/* quiz card */
+.quizcard__container {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  width: 60%;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.quizCard__header {
+  align-items: center;
+  justify-content: center;
+}
+
+.quizcard__quest {
+  margin-left: auto;
+}
+
+/* Options */
+.quizcard__options {
+  background-color: var(--secondary-text-color);
+  color: var(--primary-color);
+  padding: 0.4rem;
+  margin: 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quizcard__options:hover,
+.active {
+  background-color: rgba(91, 87, 87, 0.6);
+  color: var(--text-color);
+}
+
+.quizcard__ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons */
+.btn-next,
+.btn-prev {
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+}
+
+.btn-next {
+  float: right;
 }

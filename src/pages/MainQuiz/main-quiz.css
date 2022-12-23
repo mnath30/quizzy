@@ -1,0 +1,7 @@
+.quiz__container {
+  min-height: 100vh;
+}
+
+.quiz__content {
+  justify-content: center;
+}

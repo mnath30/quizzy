@@ -25,6 +25,7 @@ function App(): JSX.Element {
       }
     };
     fetchData();
+
     // eslint-disable-next-line
   }, []);
 

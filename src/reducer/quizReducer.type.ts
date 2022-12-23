@@ -4,6 +4,9 @@ import {
   FETCH_DATA_ERROR,
   FILTER_CATEGORY,
   SET_CURRENT_QUIZ_ID,
+  SET_CURRENT_QUIZ,
+  GO_TO_PREVIOUS_PAGE,
+  GO_TO_NEXT_PAGE,
 } from "../utils/constants";
 import { QuizType } from "../context/quizContext.type";
 
@@ -26,4 +29,12 @@ export type quizReducerType =
   | {
       type: typeof SET_CURRENT_QUIZ_ID;
       payload: string;
-    };
+    }
+  | {
+      type: typeof SET_CURRENT_QUIZ;
+      payload: QuizType;
+    }
+  | {
+      type: typeof GO_TO_PREVIOUS_PAGE;
+    }
+  | { type: typeof GO_TO_NEXT_PAGE };
