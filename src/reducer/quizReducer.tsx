@@ -8,6 +8,9 @@ import {
   SET_CURRENT_QUIZ,
   GO_TO_PREVIOUS_PAGE,
   GO_TO_NEXT_PAGE,
+  OPTION_SELECTED,
+  CALCULATE_SCORE,
+  RESET_QUIZ,
 } from "../utils/constants";
 
 const quizReducer = (state: initialStateType, action: any) => {
@@ -43,6 +46,27 @@ const quizReducer = (state: initialStateType, action: any) => {
         onGoingQuizDetails: {
           ...state.onGoingQuizDetails,
           currentQNo: state.onGoingQuizDetails.currentQNo + 1,
+        },
+      };
+    case OPTION_SELECTED:
+      const selectedOptionList = [...state.onGoingQuizDetails.optionsSelected];
+      selectedOptionList[action.payload.questionNo] = action.payload.value;
+      return {
+        ...state,
+        onGoingQuizDetails: {
+          ...state.onGoingQuizDetails,
+          optionsSelected: [...selectedOptionList],
+        },
+      };
+    case CALCULATE_SCORE:
+      return { ...state, latestScore: action.payload };
+    case RESET_QUIZ:
+      return {
+        ...state,
+        onGoingQuizDetails: {
+          ...state.onGoingQuizDetails,
+          currentQNo: 0,
+          optionsSelected: [],
         },
       };
     default:

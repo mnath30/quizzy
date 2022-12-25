@@ -7,6 +7,7 @@ import {
   SET_CURRENT_QUIZ_ID,
   GO_TO_PREVIOUS_PAGE,
   GO_TO_NEXT_PAGE,
+  OPTION_SELECTED,
 } from "../../utils/constants";
 import { Navigation, QuizCard } from "../../components";
 import "./main-quiz.css";
@@ -18,7 +19,7 @@ const MainQuiz = (): JSX.Element => {
       quizData,
       currentQuiz,
       currentQuizId,
-      onGoingQuizDetails: { currentQNo },
+      onGoingQuizDetails: { currentQNo, optionsSelected },
     },
     dispatch,
   } = useQuiz();
@@ -55,6 +56,14 @@ const MainQuiz = (): JSX.Element => {
     }
   };
 
+  // Funtion to set the selected option
+  const optionSelector = (optionSelected: string, questionNo: number) => {
+    dispatch({
+      type: OPTION_SELECTED,
+      payload: { value: optionSelected, questionNo },
+    });
+  };
+
   return (
     <div className="quiz__container">
       <Navigation />
@@ -66,6 +75,9 @@ const MainQuiz = (): JSX.Element => {
             questionNo={currentQNo}
             nextPage={goToNextPage}
             prevPage={goToPrevPage}
+            optionList={optionsSelected}
+            selectOption={optionSelector}
+            dispatch={dispatch}
           />
         </div>
       )}

@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 
-.quizcard__options:hover,
+.option:hover,
 .active {
   background-color: rgba(91, 87, 87, 0.6);
   color: var(--text-color);
@@ -105,4 +105,28 @@
 
 .btn-next {
   float: right;
+}
+
+.btn-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  border: 2px solid var(--btn-color);
+  color: var(--btn-color);
+  background-color: var(--background-color);
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  margin-left: auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: var(--success-color);
+}
+
+.incorrect {
+  background-color: var(--danger-color);
 }
