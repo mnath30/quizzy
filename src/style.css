@@ -7,6 +7,8 @@
   --secondary-text-color: #dadada;
   --text-color: #ece6db;
   --shadow-color: #2c2c2c;
+  --danger-color: #6e260e;
+  --success-color: #00a300;
 }
 
 /* flex */

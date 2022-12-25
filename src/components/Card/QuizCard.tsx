@@ -1,41 +1,93 @@
-import { QuizType } from "../../context";
 import "./card.css";
-
-type QuizCardProps = {
-  quiz: QuizType;
-  questionNo: number;
-  nextPage: any;
-  prevPage: any;
-};
+import { QuizCardProps } from "./QuizCard.type";
+import { Option } from "./Option";
+import { useNavigate } from "react-router-dom";
+import { selectedOption } from "../../utils/selectedOption";
+import { calculateScore } from "../../utils/calculateScore";
+import { CALCULATE_SCORE, RESET_QUIZ } from "../../utils/constants";
 
 const QuizCard = ({
   quiz,
   questionNo,
   nextPage,
   prevPage,
+  optionList,
+  selectOption,
+  dispatch,
 }: QuizCardProps): JSX.Element => {
+  const navigate = useNavigate();
+
+  const resetQuiz = () => {
+    dispatch({ type: RESET_QUIZ });
+  };
+
   return (
     <div className="quizcard__container card__body">
+      <button className="reset-btn" onClick={resetQuiz}>
+        Reset Quiz
+      </button>
       <div className="flex-row quizCard__header">
+        {/*Quiz Title */}
         <h3 className="card__body--header">{quiz?.title}</h3>
+
+        {/*Current Question number */}
         <span className="quizcard__quest">
           Question: {questionNo + 1}/{quiz?.numberOfQuestions}
         </span>
       </div>
+
+      {/* Question */}
       <p>{quiz?.questionList[questionNo].question}</p>
+
+      {/* Question Options */}
       <ul className="quizcard__ul">
         {quiz?.questionList[questionNo].options.map((option: any) => (
-          <li key={option?.value} className="quizcard__options">
-            {option.value}
-          </li>
+          <Option
+            key={option?.value}
+            option={option}
+            isOptionSelected={selectedOption}
+            questionNo={questionNo}
+            funcSelectOption={selectOption}
+            optionList={optionList}
+          />
         ))}
       </ul>
-      <button className="btn btn-prev" onClick={prevPage}>
+
+      {/* Previous Button */}
+      <button
+        className={`btn btn-prev ${questionNo === 0 ? "btn-disabled" : ""}`}
+        onClick={prevPage}
+        disabled={questionNo === 0}
+      >
         Previous
       </button>
-      <button className="btn btn-next" onClick={nextPage}>
-        Next
-      </button>
+
+      {/* Next ot Final Button based on question number */}
+      {questionNo + 1 !== quiz?.numberOfQuestions ? (
+        <button
+          className={`btn btn-next ${
+            questionNo + 1 > optionList.length ? "btn-disabled" : ""
+          }`}
+          onClick={nextPage}
+          disabled={questionNo + 1 > optionList.length}
+        >
+          Next
+        </button>
+      ) : (
+        <button
+          className={`btn btn-next ${
+            questionNo + 1 > optionList.length ? "btn-disabled" : ""
+          }`}
+          onClick={() => {
+            const score = calculateScore(optionList, quiz.questionList);
+            dispatch({ type: CALCULATE_SCORE, payload: score });
+            navigate("/result");
+          }}
+          disabled={questionNo + 1 > optionList.length}
+        >
+          Finish
+        </button>
+      )}
     </div>
   );
 };
