@@ -83,7 +83,6 @@ const quizReducer = (state: initialStateType, action: any) => {
         },
       };
     case SET_SEARCH_TEXT:
-      console.log("setting react", action.payload);
       return {
         ...state,
         searchText: action.payload,
