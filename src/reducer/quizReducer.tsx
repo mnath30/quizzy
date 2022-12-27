@@ -11,6 +11,8 @@ import {
   OPTION_SELECTED,
   CALCULATE_SCORE,
   RESET_QUIZ,
+  QUIT_QUIZ,
+  SET_SEARCH_TEXT,
 } from "../utils/constants";
 
 const quizReducer = (state: initialStateType, action: any) => {
@@ -68,6 +70,22 @@ const quizReducer = (state: initialStateType, action: any) => {
           currentQNo: 0,
           optionsSelected: [],
         },
+      };
+    case QUIT_QUIZ:
+      return {
+        ...state,
+        currentQuizId: "",
+        currentQuiz: {},
+        onGoingQuizDetails: {
+          ...state.onGoingQuizDetails,
+          currentQNo: 0,
+          optionsSelected: [],
+        },
+      };
+    case SET_SEARCH_TEXT:
+      return {
+        ...state,
+        searchText: action.payload,
       };
     default:
       return state;

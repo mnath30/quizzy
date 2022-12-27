@@ -9,3 +9,5 @@ export const GO_TO_NEXT_PAGE = "GO_TO_NEXT_PAGE";
 export const OPTION_SELECTED = "OPTION_SELECTED";
 export const CALCULATE_SCORE = "CALCULATE_SCORE";
 export const RESET_QUIZ = "RESET_QUIZ";
+export const QUIT_QUIZ = "QUIT_QUIZ";
+export const SET_SEARCH_TEXT = "SET_SEARCH_TEXT";

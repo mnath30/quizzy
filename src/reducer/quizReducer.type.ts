@@ -10,6 +10,8 @@ import {
   OPTION_SELECTED,
   CALCULATE_SCORE,
   RESET_QUIZ,
+  QUIT_QUIZ,
+  SET_SEARCH_TEXT,
 } from "../utils/constants";
 import { QuizType } from "../context/quizContext.type";
 
@@ -51,4 +53,11 @@ export type quizReducerType =
     }
   | {
       type: typeof RESET_QUIZ;
+    }
+  | {
+      type: typeof QUIT_QUIZ;
+    }
+  | {
+      type: typeof SET_SEARCH_TEXT;
+      payload: string;
     };
