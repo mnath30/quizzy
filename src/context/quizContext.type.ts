@@ -26,6 +26,7 @@ export type initialStateType = {
   quizError?: string;
   latestScore: number;
   filter: string;
+  searchText: string;
   currentQuizId: string;
   currentQuiz: any;
   onGoingQuizDetails: {

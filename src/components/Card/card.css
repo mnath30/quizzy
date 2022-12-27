@@ -112,15 +112,18 @@
   cursor: not-allowed;
 }
 
-.reset-btn {
+.reset-btn,
+.quit-btn {
   border: 2px solid var(--btn-color);
   color: var(--btn-color);
   background-color: var(--background-color);
   padding: 0.4rem 0.6rem;
-  display: flex;
-  margin-left: auto;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.reset-btn {
+  margin-left: auto;
 }
 
 .correct {

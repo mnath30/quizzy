@@ -6,6 +6,7 @@ export const initialState: initialStateType = {
   quizError: "",
   latestScore: 0,
   filter: "All",
+  searchText: "",
   currentQuizId: "",
   currentQuiz: {},
   onGoingQuizDetails: {

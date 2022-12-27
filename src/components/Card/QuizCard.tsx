@@ -4,7 +4,7 @@ import { Option } from "./Option";
 import { useNavigate } from "react-router-dom";
 import { selectedOption } from "../../utils/selectedOption";
 import { calculateScore } from "../../utils/calculateScore";
-import { CALCULATE_SCORE, RESET_QUIZ } from "../../utils/constants";
+import { CALCULATE_SCORE, RESET_QUIZ, QUIT_QUIZ } from "../../utils/constants";
 
 const QuizCard = ({
   quiz,
@@ -17,15 +17,25 @@ const QuizCard = ({
 }: QuizCardProps): JSX.Element => {
   const navigate = useNavigate();
 
+  const quitQuiz = () => {
+    dispatch({ type: QUIT_QUIZ });
+    navigate("/categories", { replace: true });
+  };
+
   const resetQuiz = () => {
     dispatch({ type: RESET_QUIZ });
   };
 
   return (
     <div className="quizcard__container card__body">
-      <button className="reset-btn" onClick={resetQuiz}>
-        Reset Quiz
-      </button>
+      <div className="flex-row">
+        <button className="quit-btn" onClick={quitQuiz}>
+          Quit Quiz
+        </button>
+        <button className="reset-btn" onClick={resetQuiz}>
+          Reset Quiz
+        </button>
+      </div>
       <div className="flex-row quizCard__header">
         {/*Quiz Title */}
         <h3 className="card__body--header">{quiz?.title}</h3>
