@@ -25,7 +25,7 @@ Checkout the live application here [Quizzy](https://play-quizzy.netlify.app/)
 
 ### Tech Stack used
 
-   Built using HTML , CSS, TypeScript and React
+   Built using HTML , CSS, TypeScript and React. 
    Jest is used for writing the test cases
    
    Hosted on Netlify 
@@ -57,4 +57,8 @@ npm install
 ```
 npm start
 ```
+
+### Demonstration
+
+https://user-images.githubusercontent.com/55870039/209678939-6e401b41-4e07-4fe6-893c-1c01250a2f7f.mp4
 
