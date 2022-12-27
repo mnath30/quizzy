@@ -4,7 +4,9 @@ export const initialState: initialStateType = {
   quizData: [],
   quizLoading: false,
   quizError: "",
-  latestScore: 0,
+  latestScore: localStorage.getItem("LatestScore")
+    ? Number(localStorage.getItem("LatestScore"))
+    : 0,
   filter: "All",
   searchText: "",
   currentQuizId: "",

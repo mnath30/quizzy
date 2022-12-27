@@ -61,6 +61,7 @@ const quizReducer = (state: initialStateType, action: any) => {
         },
       };
     case CALCULATE_SCORE:
+      localStorage.setItem("LatestScore", action.payload);
       return { ...state, latestScore: action.payload };
     case RESET_QUIZ:
       return {

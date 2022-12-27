@@ -53,6 +53,12 @@ a {
   text-decoration: none;
 }
 
+.link {
+  color: var(--btn-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* list */
 li {
   list-style: none;
