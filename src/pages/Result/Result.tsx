@@ -54,10 +54,21 @@ const Result = () => {
             </section>
           </div>
         </div>
+      ) : latestScore === 0 ? (
+        <h3 className="padding-sm">
+          Please complete the Quiz to know the results.
+          <Link to="/categories" className="link">
+            Go to Categories
+          </Link>
+        </h3>
       ) : (
         <h3 className="padding-sm">
-          Please complete the Quiz to know the results.{" "}
-          <Link to="/categories"> Go to Categories</Link>
+          Your latest score was: {latestScore}/ 5
+          <div>
+            <Link to="/categories" className="link">
+              Play another quiz
+            </Link>
+          </div>
         </h3>
       )}
     </div>
